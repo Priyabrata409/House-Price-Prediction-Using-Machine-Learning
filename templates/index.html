@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+    <style>body{
+        height:auto;
+
+
+        background-size: auto 100%;
+        background-repeat:no-repeat;
+
+        }
+.headw{
+text-align:center;
+height:200px;
+padding:200px;
+
+margin:auto;}
+.header{
+ background:white;
+ border:4px solid pink;
+ border-radius:4px;
+ margin:auto;
+
+}
+ .centerdiv{
+height:10vh;
+display:flex;
+justify-content: center;
+align-items:center;}
+.details{
+margin:5px;
+
+}
+a{
+height:50px;
+width:50px;
+background-color:#f5f6fa;
+border-radius:50px;
+text-align:center;
+margin:20px;
+box-shadow:1px 4px 2px 2px #dcdde1;
+line-height:60px;
+}
+a i{
+transition: all 0.3s linear;}
+a:hover i{
+transform :scale(1.4);}
+.details{
+margin:5px;
+
+}
+
+</style>
+    <link rel="stylesheet" href="static\style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body background="static\house1.jpg" >
+
+<h2 align="center">House Price Prediction </h2>
+ <div  class="headw">{% with messages=get_flashed_messages() %}
+   {% if messages %}
+     {% for msg in messages %}
+        <h3 class="header" >{{msg}}</h3>
+     {% endfor %}
+   {% endif %}
+{% endwith %}</div>
+<div class="details" align="center"> <h2>Made with &#10084 by Lucky</h2></div>
+</div>
+
+<div class="centerdiv">
+    <a href="https://m.facebook.com/profile.php" target="_blank">
+        <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.instagram.com/lucky__2000/" target="_blank">
+        <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+    </a><a href="https://github.com/Priyabrata409" target="_blank">
+      <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+    </a><a href="https://www.linkedin.com/mwlite/in/priyabrata-panda-80485018a" target="_blank">
+<i class="fa fa-2x fa-linkedin" aria-hidden="true"></i> </a>
+</body>
+</html>

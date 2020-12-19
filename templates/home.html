@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="static\style.css">
+    <style>
+        .centerdiv{
+height:20vh;
+display:flex;
+justify-content: center;
+align-items:center;}
+a{
+height:50px;
+width:50px;
+background-color:#f5f6fa;
+border-radius:50px;
+text-align:center;
+margin:20px;
+box-shadow:1px 4px 2px 2px #dcdde1;
+line-height:60px;
+}
+a i{
+transition: all 0.3s linear;}
+a:hover i{
+transform :scale(1.4);}
+.details{
+margin:5px;
+
+}
+    </style>
+</head>
+<body background="static\house1.jpg" >
+<h1 align="center" >House Price Prediction</h1>
+<h5 align="center">House Price Prediction Using Machine Learning</h5>
+<div class="imagediv"><img src="static\ip1.jpg" alt="" class="img1"></div>
+
+<div class="forms">
+    <form action="{{ url_for('predict') }}" method="post" >
+        <label for="month">Posted_By</label>
+        <select name="posted" id="posted">
+             <option value="team">Owner or Dealer or Builder</option>
+            <option value="Owner">Owner</option>
+            <option value="Dealer">Dealer</option>
+            <option value="Builder">Builder</option>
+        </select>
+        <label for="rera">RERA approved or not</label>
+        <select name="rera" id="rera">
+             <option value="team">Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+
+             <label for="extras">Number of Rooms</label>
+            <input type="number"name="rooms" placeholder="Number of Rooms" autocomplete="off" min="0" required>
+             <label for="foot">square foot</label>
+            <input type="number"name="foot" placeholder="Square Foot" autocomplete="off" step=0.1 min="0" required>
+                    <label for="ready">Ready to Move or Not</label>
+
+            <select name="ready_to_move" id="batting">
+                 <option value="team">Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+
+        </select>
+        <label for="resale">Resale</label>
+
+            <select name="resale" id="resale">
+                <option value="team">Yes or No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option></select>
+
+        </select>
+        <label for="location">Location Name</label>
+        <select name="location" id="location_name">
+            <option value="team">Select City Name</option>
+            <option value="Bangalore">Bangalore</option>
+<option value="Mysore">Mysore</option>
+<option value="Ghaziabad">Ghaziabad</option>
+<option value="Kolkata">Kolkata</option>
+<option value="Kochi">Kochi</option>
+<option value="Jaipur">Jaipur</option>
+<option value="Mohali">Mohali</option>
+<option value="Chennai">Chennai</option>
+<option value="Siliguri">Siliguri</option>
+<option value="Noida">Noida</option>
+<option value="Raigad">Raigad</option>
+<option value="Bhubaneswar">Bhubaneswar</option>
+<option value="Pune">Pune</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Nagpur">Nagpur</option>
+<option value="Bhiwadi">Bhiwadi</option>
+<option value="Faridabad">Faridabad</option>
+<option value="Lalitpur">Lalitpur</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Vadodara">Vadodara</option>
+<option value="Visakhapatnam">Visakhapatnam</option>
+<option value="Vapi">Vapi</option>
+<option value="Mangalore">Mangalore</option>
+<option value="Aurangabad">Aurangabad</option>
+<option value="Vijayawada">Vijayawada</option>
+<option value="Belgaum">Belgaum</option>
+<option value="Bhopal">Bhopal</option>
+<option value="Lucknow">Lucknow</option>
+<option value="Kanpur">Kanpur</option>
+<option value="Gandhinagar">Gandhinagar</option>
+<option value="Pondicherry">Pondicherry</option>
+<option value="Agra">Agra</option>
+<option value="Ranchi">Ranchi</option>
+<option value="Gurgaon">Gurgaon</option>
+<option value="Udupi">Udupi</option>
+<option value="Indore">Indore</option>
+<option value="Jodhpur">Jodhpur</option>
+<option value="Coimbatore">Coimbatore</option>
+<option value="Valsad">Valsad</option>
+<option value="Palghar">Palghar</option>
+<option value="Surat">Surat</option>
+<option value="Varanasi">Varanasi</option>
+<option value="Guwahati">Guwahati</option>
+<option value="Amravati">Amravati</option>
+<option value="Anand">Anand</option>
+<option value="Tirupati">Tirupati</option>
+<option value="Secunderabad">Secunderabad</option>
+<option value="Raipur">Raipur</option>
+<option value="Vizianagaram">Vizianagaram</option>
+<option value="Thrissur">Thrissur</option>
+<option value="Madurai">Madurai</option>
+<option value="Chandigarh">Chandigarh</option>
+<option value="Shimla">Shimla</option>
+<option value="Gwalior">Gwalior</option>
+<option value="Rajkot">Rajkot</option>
+<option value="Sonipat">Sonipat</option>
+<option value="Allahabad">Allahabad</option>
+<option value="Dharuhera">Dharuhera</option>
+<option value="Durgapur">Durgapur</option>
+<option value="Panchkula">Panchkula</option>
+<option value="Solapur">Solapur</option>
+<option value="Goa">Goa</option>
+<option value="Jamshedpur">Jamshedpur</option>
+<option value="Jabalpur">Jabalpur</option>
+<option value="Hubli">Hubli</option>
+<option value="Patna">Patna</option>
+<option value="Bilaspur">Bilaspur</option>
+<option value="Ratnagiri">Ratnagiri</option>
+<option value="Meerut">Meerut</option>
+<option value="Jalandhar">Jalandhar</option>
+<option value="Ludhiana">Ludhiana</option>
+<option value="Kota">Kota</option>
+<option value="Panaji">Panaji</option>
+<option value="Kolhapur">Kolhapur</option>
+<option value="Ernakulam">Ernakulam</option>
+<option value="Bhavnagar">Bhavnagar</option>
+<option value="Bharuch">Bharuch</option>
+<option value="Asansol">Asansol</option>
+<option value="Margao">Margao</option>
+<option value="Bhilai">Bhilai</option>
+<option value="Dehradun">Dehradun</option>
+<option value="Guntur">Guntur</option>
+<option value="Jalgaon">Jalgaon</option>
+<option value="Udaipur">Udaipur</option>
+<option value="Neemrana">Neemrana</option>
+<option value="Sindhudurg">Sindhudurg</option>
+<option value="Kottayam">Kottayam</option>
+<option value="Dhanbad">Dhanbad</option>
+<option value="Navsari">Navsari</option>
+<option value="Bahadurgarh">Bahadurgarh</option>
+<option value="Nellore">Nellore</option>
+<option value="Haridwar">Haridwar</option>
+<option value="Jamnagar">Jamnagar</option>
+<option value="Junagadh">Junagadh</option>
+<option value="Ahmednagar">Ahmednagar</option>
+<option value="Palakkad">Palakkad</option>
+<option value="Karjat">Karjat</option>
+<option value="Ajmer">Ajmer</option>
+<option value="Aligarh">Aligarh</option>
+<option value="Rudrapur">Rudrapur</option>
+<option value="Solan">Solan</option>
+<option value="Mathura">Mathura</option>
+            <option value="Others">Others</option>
+
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+<div  class="headw">{% with messages=get_flashed_messages() %}
+   {% if messages %}
+     {% for msg in messages %}
+        <h3 align="center" >{{msg}}</h3>
+     {% endfor %}
+   {% endif %}
+{% endwith %}</div>
+ <div class="details" align="center"> <h2>Made with &#10084 by Lucky</h2></div>
+</div>
+
+<div class="centerdiv">
+    <a href="https://m.facebook.com/profile.php" target="_blank">
+        <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.instagram.com/lucky__2000/" target="_blank">
+        <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+    </a><a href= "https://github.com/Priyabrata409" target="_blank">
+      <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+    </a><a href="https://www.linkedin.com/mwlite/in/priyabrata-panda-80485018a" target="_blank">
+<i class="fa fa-2x fa-linkedin" aria-hidden="true"></i> </a>
+
+
+</div>
+</body>
+</html>
